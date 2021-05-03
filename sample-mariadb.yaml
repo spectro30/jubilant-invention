@@ -1,0 +1,39 @@
+apiVersion: kubedb.com/v1alpha2
+kind: MariaDB
+metadata:
+  name: sample-mariadb
+  namespace: demo
+spec:
+  version: "10.5.8"
+  replicas: 3
+  storageType: Durable
+  storage:
+    storageClassName: "standard"
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+  terminationPolicy: WipeOut
+  # monitor:
+  #   agent: prometheus.io
+  #   prometheus:
+  #     serviceMonitor:
+  #       labels:
+  #         k8s-app: prometheus
+  #       interval: 10s
+  # #requireSSL: true
+  # tls:
+  #   issuerRef:
+  #     apiGroup: cert-manager.io
+  #     kind: Issuer
+  #     name: md-issuer
+  #   certificates:
+  #   - alias: server
+  #     subject:
+  #       organizations:
+  #       - kubedb:server
+  #     dnsNames:
+  #     - localhost
+  #     ipAddresses:
+  #     - "127.0.0.1"

@@ -1,0 +1,9 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: MariaDBOpsRequest
+metadata:
+  name: md-restart
+  namespace: demo
+spec:
+  type: Restart  
+  databaseRef:
+    name: sample-mariadb

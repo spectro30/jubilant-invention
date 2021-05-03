@@ -1,0 +1,1 @@
+echo '!includedir /etc/mysql/custom.conf.d/' >> /etc/mysql/my.cnf

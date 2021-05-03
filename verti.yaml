@@ -1,0 +1,52 @@
+apiVersion: ops.kubedb.com/v1alpha1
+kind: MariaDBOpsRequest
+metadata:
+  name: md-scale-group
+  namespace: demo
+spec:
+  type: VerticalScaling  
+  databaseRef:
+    name: sample-mariadb
+  verticalScaling:
+    mariadb:
+      requests:
+        memory: "600Mi"
+        cpu: "0.1"
+      limits:
+        memory: "600Mi"
+        cpu: "0.1"
+    exporter:
+      requests:
+        memory: "600Mi"
+        cpu: "0.1"
+      limits:
+        memory: "600Mi"
+        cpu: "0.1"
+
+# Default resources MariaDB, Pod & Stateful Set
+
+# resources:
+#   limits:
+#     cpu: 500m
+#     memory: 1Gi
+#   requests:
+#     cpu: 500m
+#     memory: 1Gi
+
+
+# resources:
+#   limits:
+#     cpu: 500m
+#     memory: 1Gi
+#   requests:
+#     cpu: 500m
+#     memory: 1Gi
+
+
+# resources:
+#   limits:
+#     cpu: 500m
+#     memory: 1Gi
+#   requests:
+#     cpu: 500m
+#     memory: 1Gi
